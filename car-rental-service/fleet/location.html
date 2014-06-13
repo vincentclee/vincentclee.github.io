@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Locations | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	</script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+
+<!-- Data -->
+<section class="fill-section">
+	<div class="centerImg">
+		<h2 class="example-name">The NYC1 - YouDrive Rental Location</h2>
+		60 Hudson St New York, NY 10013
+		<img src="../images/NYC1.jpg">
+		<br><br><br>
+		<h2 class="example-name">The NYC2 - YouDrive Rental Location</h2>
+		111 8th Avenue New York, NY 10011
+		<img src="../images/NYC2.jpg">
+		<br><br><br>
+		<h2 class="example-name">The NYC3 - YouDrive Rental Location</h2>
+		32 Avenue of the Americas (6th Ave) New York, NY 10013
+		<img src="../images/NYC3.jpg">
+	</div>
+</section>
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

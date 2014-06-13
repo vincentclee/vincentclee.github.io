@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	</script>
+	<script src="/car-rental-service/assets/registration.js"></script>
+	<script src="/car-rental-service/assets/typeahead.bundle.js"></script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+
+<!-- Input -->
+<section class="fill-section">
+	<div class="centerr" id="with-states">
+		<h2 class="example-name">Enter your Payment Info</h2>
+		<br>
+		<input class="maininput" type="text" placeholder="Credit Card #"><br><br>
+		<input class="maininput" type="text" placeholder="Security Code"><br><br>
+		<input class="maininput" type="text" placeholder="Expires (month/year)"><br><br>
+		<input class="maininput" type="text" placeholder="Cardholder First Name"><br><br>
+		<input class="maininput" type="text" placeholder="Cardholder Last Name"><br><br>
+		<br>
+		<h2 class="example-name">Billing Address</h2>
+		<br>
+		<input class="maininput" type="text" placeholder="Apt/PO Box"><br><br>
+		<input class="maininput" type="text" placeholder="Street"><br><br>
+		<input class="maininput" type="text" placeholder="City"><br><br>
+		<input class="typeahead" type="text" placeholder="State"><br><br>
+		<input class="maininput" type="text" placeholder="ZIP Code"><br><br>
+		
+		<!-- Submit Button -->
+		<form action="register5.html" method="post">
+			<input type="submit" class="submitButton" value="Continue"/>
+		</form>
+	</div>
+</section>
+
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

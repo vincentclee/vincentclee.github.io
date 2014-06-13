@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reserve a Vehicle | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/flight.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/flight-calendar.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script src="/car-rental-service/assets/jquery.tools.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/customer_header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	$(document).ready(function(){
+		//Date Selector
+		$(":date").dateinput({ trigger: true, format: 'dd mmmm yyyy', min: -1 })
+		$(":date").bind("onShow onHide", function()  {
+			$(this).parent().toggleClass("active");
+		});
+		$(":date:first").data("dateinput").change(function() {
+			// we use it's value for the seconds input min option
+			$(":date:last").data("dateinput").setMin(this.getValue(), true);
+		});
+		});
+	</script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+<!-- Main Section -->
+<section class="fill-section">
+	<h2 class="example-name">When do you want to reserve your car?</h2>
+	<br>
+	<h3>NYC2 - 111 8th Avenue New York</h3>
+	<h3>Lamborghini Aventador Coupe</h3>
+	<br>
+	<h4>Daily $450 Hourly $35</h4>
+	<br>
+
+	<form id="flight">
+		<label>Pick Up<br/>
+			<input type="date" name="departure" value="Today"/>
+		</label>
+		<label>Return<br/>
+			<input type="date" name="arrival" data-value="1" value="Tomorrow"/>
+		</label>
+	</form>
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="centerLarger">
+		<!-- Submit Button -->
+		<form action="reserve4.html" method="post">
+			<input type="submit" class="submitButton" value="Continue"/>
+		</form>
+	</div>
+</section>
+
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

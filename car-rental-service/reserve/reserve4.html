@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reserve a Vehicle | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/customer_header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	</script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+<!-- Main Section -->
+<section class="fill-section">
+	<div class="centerr">
+		<h1>Confirmation</h1>
+		<br>
+		<h2>Location</h2>
+		NYC2<br>111 8th Avenue New York, NY 10011
+		<br><br>
+		<h2>Vehicle</h2>
+		Lamborghini Aventador Coupe
+		<br><br>
+		<h2>Date</h2>
+		July 1, 2014 - July 2, 2014
+		<br><br>
+		<h2>Price</h2>
+		$450
+		<br><br>
+		<!-- Submit Button -->
+		<form action="reserve5.html" method="post">
+			<input type="submit" class="submitButton" value="Reserve"/>
+		</form>
+	</div>
+</section>
+
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

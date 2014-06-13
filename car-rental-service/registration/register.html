@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	</script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+
+<!-- Input -->
+<section class="fill-section">
+	<div class="centerr">
+		<h2 class="example-name">Please Complete your Details</h2>
+		<br>
+		<input class="maininput" type="text" placeholder="Create a username"><br><br>
+		<input class="maininput" type="password" placeholder="Create a password"><br><br>
+		<input class="maininput" type="password" placeholder="Confirm your password"><br><br>
+		<input class="maininput" type="email" placeholder="Your email address"><br><br>
+		
+		<!-- Submit Button -->
+		<form action="register1.html" method="post">
+			<input type="submit" class="submitButton" value="Continue"/>
+		</form>
+	</div>
+</section>
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

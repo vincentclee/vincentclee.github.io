@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Stuff | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/application-extra.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/account.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/customer_header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	$(document).ready(function() {
+		/* Account Information */
+		$("#profile").click(function() {
+			$("#settings").slideToggle();
+		});
+		/* Billing Alerts */
+		$("#billing_alerts").click(function() {
+			$("#billing").slideToggle();
+		});
+		/* E-mail Subscriptions */
+		$("#email_subscriptions").click(function() {
+			$("#email").slideToggle();
+		});
+		/* Referral Program */
+		$("#referral_program").click(function() {
+			$("#referral_program_settings").slideToggle();
+		});
+		/* Contact Information */
+		$("#contact").click(function() {
+			$("#contact_info").slideToggle();
+		});
+		/* Driver's License Information */
+		$("#driver_license").click(function() {
+			$("#driver_license_info").slideToggle();
+		});
+		/* Payment Information */
+		$("#payment").click(function() {
+			$("#payment_info").slideToggle();
+		});
+	});
+	</script>
+</head>
+<body>
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+<!-- Input -->
+<section class="all-most-fill-section">
+	<h1>My Reservations</h1>
+	<br>
+	<table class="vehicles">
+		<thead>
+			<tr>
+				<th>Vehicle</th>
+				<th>Location</th>
+				<th>Status</th>
+				<th>Start</th>
+				<th>End</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#">Lamborghini Aventador Coupe</a>
+				</td>
+				<td>
+					NYC2
+				</td>
+				<td class="active status">
+					Active
+				</td>
+				<td>
+					July 1, 2014
+				</td>
+				<td>
+					July 2, 2014
+				</td>
+				<td>
+					$450
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br><br><br><br>
+	
+	<!-- Settings -->
+	<h1>Settings</h1>
+	<br>
+	<!-- Account Information -->
+	<div id="profile">
+		<h3 class="section-divider">Account Information</h3>
+	</div>
+	<div id="settings">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							<a href="#">vincentlee@youdrive.com</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#">Edit Password</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Member since 02/23/2010
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#" style="color:red">Deactive Account</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	
+	<!-- Billing Alerts -->
+	<div id="billing_alerts">
+		<h3 class="section-divider">Billing Alerts</h3>
+	</div>
+	<div id="billing">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							We'll send you an email any time that your monthly usage has exceeded this amount.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="#" class="edit_billing_alert" method="post">
+								<div class="dotted">
+									<input name="billing_alert[enabled]" value="0" type="hidden"><input id="billing_alert_enabled" name="billing_alert[enabled]" value="1" type="checkbox">
+									<label for="billing_alert_enabled">Enabled</label>
+									<span class="prefix">$</span>
+									<input class="dotted-line" id="billing_alert_dollars_amount" name="billing_alert[dollars_amount]" placeholder="Alert amount in dollars" value="20" type="number">
+									<br><br>
+									<div class="actions">
+										<input type="submit" class="submitButton" value="Save"/>
+									</div>
+								</div>
+							</form>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	
+	<!-- E-mail Subscriptions -->
+	<div id="email_subscriptions">
+		<h3 class="section-divider">E-mail Subscriptions</h3>
+	</div>
+	<div id="email">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							By subscribing to our email newsletter, you will be opting to receive updates about new feature releases, discounts and promotional codes, security updates, and more.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							If you're not interested in receiving this content, please uncheck the box below to unsubscribe.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<form action="#" method="post">
+								<input name="subscriptions[newsletter_unsubscribed]" value="0" type="hidden">
+								<input id="newsletter_subscription_checkbox" name="subscriptions[newsletter_unsubscribed]" value="1" type="checkbox">
+								<label class="checked" for="newsletter_subscription_checkbox">Subscribe to newsletters</label>
+							</form>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	
+	<!-- Referral Program -->
+	<div id="referral_program">
+		<h3 class="section-divider">Referral Program</h3>
+	</div>
+	<div id="referral_program_settings">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							Spread the love and earn rewards! We will issue you <strong>$50 in account credits</strong> for every referred customer that totals $50 in billings. Copy your unique referral link below to track your referrals.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Please note:</strong> Bidding on branded keywords which include 'youdrive' and/or 'you drive' for ads is prohibited.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							https://www.youdrive.com/?refcode=ei49dl302
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#">Referral Program Settings</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	
+	<!-- Contact Information -->
+	<div id="contact">
+		<h3 class="section-divider">Contact Information</h3>
+	</div>
+	<div id="contact_info">
+		<form action="#" class="simple_form change_profile" method="post">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Enter your name" value="" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Enter your mailing address" size="50" value="" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Website URL" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Company Name" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Title" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Industry" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string tel required dotted-line" placeholder="Phone Number" size="50" type="tel">
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" class="submitButton" value="Save"/>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+	<br>
+	
+	<!-- Driver's License Information -->
+	<div id="driver_license">
+		<h3 class="section-divider">Driver's License Information</h3>
+	</div>
+	<div id="driver_license_info">
+		<form action="#" class="simple_form change_profile" method="post">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Date of Birth (month/day/year)" value="" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="License Issued in" size="50" value="" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Driver's License #" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="License Expiration (month/day/year)" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" class="submitButton" value="Save"/>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+	<br>
+	
+	<!-- Payment Information -->
+	<div id="payment">
+		<h3 class="section-divider">Payment Information</h3>
+	</div>
+	<div id="payment_info">
+		<form action="#" class="simple_form change_profile" method="post">
+		<table class="information">
+			<tbody>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Credit Card #" value="" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Security Code" size="50" value="" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Expires (month/year)" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Cardholder First Name" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="string required dotted-line" placeholder="Cardholder Last Name" size="50" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" class="submitButton" value="Save"/>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</section>
+
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>

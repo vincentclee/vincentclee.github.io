@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reserve a Vehicle | YouDrive</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/car-rental-service/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/extra-style.css">
+	<link rel="stylesheet" type="text/css" href="/car-rental-service/assets/application.css">
+	<script src="/car-rental-service/assets/jquery.min.js"></script>
+	<script>
+	$(function() {
+		/* Load Header */
+		$("#header").load("/car-rental-service/customer_header.html");
+		$("#footer").load("/car-rental-service/footer.html");
+		/* Header and Section to fill whole page */
+		$(".fill-section").css("min-height", window.innerHeight - parseInt($("header").height()));
+	});
+	</script>
+	<script src="/car-rental-service/assets/application.js"></script>
+</head>
+<body class="control_panel droplets new">
+
+<!-- Page Header -->
+<header>
+	<div class="wrapper-full" id="header"></div>
+</header>
+
+
+<!-- Main Section -->
+<section class="fill-section">
+	<h2 class="example-name">Vehicles available at: NYC2 - 111 8th Avenue New York</h2>
+	<br>
+	
+	<form action="reserve3.html" id="new_droplet" method="post">
+		<div class="inner">
+			<div class="tabbable size_selection" id="size">
+				<div class="sizes-selection carousel slider" id="sizes">
+					<div class="carousel-inner">
+						<div class="active item">
+							<div class="size">
+								<span class="vehicle_name">
+									<strong>Ferrari</strong> 458 Italia Coupe
+								</span>
+								<span class="pricing">
+									<span class="price">
+										<span class="period">Daily $375</span> 
+									</span>
+									<span class="price">
+										<span class="period">Hourly $25</span>
+									</span>
+								</span>
+								<input type="radio">
+							</div>
+							<div class="size">
+								<span class="vehicle_name">
+									<strong>BMW</strong> 1 Series Convertible
+								</span>
+								<span class="pricing">
+									<span class="price">
+										<span class="period">Daily $225</span> 
+									</span>
+									<span class="price">
+										<span class="period">Hourly $15</span>
+									</span>
+								</span>
+								<input type="radio">
+							</div>
+							<div class="size">
+								<span class="vehicle_name">
+									<strong>Bugatti</strong> Veyron 16.4 Convertible
+								</span>
+								<span class="pricing">
+									<span class="price">
+										<span class="period">Daily $925</span> 
+									</span>
+									<span class="price">
+										<span class="period">Hourly $55</span>
+									</span>
+								</span>
+								<input type="radio">
+							</div>
+							<div class="size">
+								<span class="vehicle_name">
+									<strong>Lamborghini</strong> Aventador Coupe
+								</span>
+								<span class="pricing">
+									<span class="price">
+										<span class="period">Daily $450</span> 
+									</span>
+									<span class="price">
+										<span class="period">Hourly $35</span>
+									</span>
+								</span>
+								<input type="radio">
+							</div>
+							<div class="size">
+								<span class="vehicle_name">
+									<strong>Fisker</strong> Karma Sedan
+								</span>
+								<span class="pricing">
+									<span class="price">
+										<span class="period">Daily $725</span> 
+									</span>
+									<span class="price">
+										<span class="period">Hourly $35</span>
+									</span>
+								</span>
+								<input type="radio">
+							</div>
+						</div>
+					</div>
+					<br>
+					<input type="submit" class="submitButton" value="Continue"/>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+
+
+<!-- Page Footer -->
+<footer>
+	<div class="wrapper-full" id="footer"></div>
+</footer>
+
+</body>
+</html>
