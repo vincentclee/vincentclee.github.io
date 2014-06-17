@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="UGA's experimental course picking website, presented by Dan Everett.">
+	<meta name="keywords" content="dan, dran, everett, uga, coursepicker, course, picker, oasis, elc">
+	<title>Schedule | UGA Course Picker</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/jquery.dataTables.css">
+	<!--[if lte IE 7]>
+	<style> .content { margin-right: -1px; }
+	ul.nav a { zoom: 1; } </style>
+	<![endif]-->
+	<!--Override container min-width for HTML5 Canvas -->
+	<style>
+	.container {
+		width: 98%;
+		max-width: 1500px;
+		min-width: 1104px;
+		background-color: #FFF;
+		margin: 0 auto;
+	}
+	</style>
+	<script src="assets/jquery.js"></script>
+	<script src="assets/jquery.dataTables.js"></script>
+	<script class="init">
+	$(document).ready(function() {
+		$('#schedule').dataTable({
+			"pageLength": 5,
+			"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+			"ajax": {
+				"url": "data/schedule.json",
+				"dataSrc": ""
+			},
+			"columns": [
+				{ "data": "Call #" },
+				{ "data": "Subject" },
+				{ "data": "Course" },
+				{ "data": "Credit" },
+				{ "data": "Course Title" },
+				{ "data": "Days" },
+				{ "data": "Time" },
+				{ "data": "Building" },
+				{ "data": "Room" },
+				{ "data": "Instructor" }
+			]
+		});
+	});
+	</script>
+	<script>
+		var daysOfWeek = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+		var hoursOfDay = new Array("8 AM", "9 AM", "10 AM", "11 AM", "Noon", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM");
+		var prefix = new Array("CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI");
+		var number = new Array("4050", "4050", "4050", "4730", "4730", "4730", "4560", "4560", "4560");
+		var title = new Array("SOFT ENGINEERING", "SOFT ENGINEERING", "SOFT ENGINEERING", "OPERATING SYSTEMS", "OPERATING SYSTEMS", "OPERATING SYSTEMS", "EVOLUTIONARY COMPUT", "EVOLUTIONARY COMPUT", "EVOLUTIONARY COMPUT");
+		var instructor = new Array("KOCHUT", "KOCHUT", "KOCHUT", "RAMASWAMY", "RAMASWAMY", "RAMASWAMY", "RASHEED", "RASHEED", "RASHEED");
+		var day = new Array("W", "T", "R", "W", "T", "R", "W", "T", "R");
+		var startTime = new Array("1010", "930", "930", "1430", "1400", "1400", "1535", "1530", "1530");
+		var endTime = new Array("1100", "1045", "1045", "1520", "1515", "1515", "1625", "1645", "1645");
+		var building = new Array("1023", "1023", "1023", "1023", "1023", "1023", "1023", "1023", "1023");
+		var room = new Array("0306", "0306", "0306", "0306", "0306", "0306", "0306", "0306", "0306");
+		var posX = new Array("362", "206", "518", "362", "206", "518", "362", "206", "518");
+		var posY = new Array("141", "118", "118", "343", "321", "321", "388", "388", "388");
+		var height = new Array("49", "60", "60", "38", "60", "60", "38", "60", "60");
+		
+		/**
+	     * @author Meghan Redwine
+	     * @param varX
+	     * @param varY
+	     * @param varH
+	     * 
+	     * Draws one class meeting 
+	     * Will always be .rect(x,y,156,h), where (x,y) is the top left corner of rectangle
+		*/
+		function drawClassMeetings(c, ctx) {
+			// Draws one class meeting
+			for (var i=0; i<posX.length; i++) {
+				//Draw box
+				ctx.fillStyle = "orange";
+				ctx.globalAlpha = 1;
+				//0.5 + x + p, 60+45, w-static, h) //(x,y of top left corner, width, height) //(60.5, 206, 156, 56.1)
+				//ctx.fillRect(parseInt(posX[i]), parseInt(posY[i]), 155, parseInt(height[i]));
+				ctx.strokeStyle = "orange";
+				
+				var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+				
+				if (!isSafari) {
+					var cornerRadius = 20;
+					
+					//Set faux rounded corners
+					ctx.lineJoin = "round";
+					
+					ctx.lineWidth = cornerRadius;
+					
+					ctx.strokeRect(parseInt(posX[i])+(cornerRadius/2), parseInt(posY[i])+(cornerRadius/2), 155-cornerRadius, parseInt(height[i])-cornerRadius);
+					ctx.fillRect(parseInt(posX[i])+(cornerRadius/2), parseInt(posY[i])+(cornerRadius/2), 155-cornerRadius, parseInt(height[i])-cornerRadius);
+				} else {
+					ctx.fillRect(parseInt(posX[i]), parseInt(posY[i]), 155, parseInt(height[i]));
+				}
+				
+				
+				ctx.globalAlpha = 1;
+				
+				//Draw Text on Box
+				var tp = 3; //text padding x
+				
+				ctx.fillStyle = "black";
+				ctx.font = "bold 10px Arial";
+				ctx.fillText(prefix[i]+" "+number[i], parseInt(posX[i])+tp, parseInt(posY[i])+10);
+				ctx.font = "10px Arial";
+				ctx.fillText(title[i], parseInt(posX[i])+tp, parseInt(posY[i])+20);
+				ctx.fillText(building[i]+"-"+room[i], parseInt(posX[i])+tp, parseInt(posY[i])+30);
+				ctx.fillText(startTime[i]+"-"+endTime[i], parseInt(posX[i])+tp+60, parseInt(posY[i])+30);
+				ctx.measureText(title[i]);
+			}
+		}
+		
+		/**
+		 * Initialize the canvas with grid lines and labels
+		 * @author Alex Tozzi
+		 * @author Meghan Redwine
+		 */
+		function initializeCanvas() {
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			
+			var bw = 780; //bow width
+			var bh = 540;  //box height
+			var p = 50;  //padding
+			
+			//Draws one vertical line
+			for (var x = 0, y = 0; x <= bw; x += 156, y++) {
+				ctx.moveTo(-0.5 + x + p, p);
+				ctx.lineTo(-0.5 + x + p, bh + p);
+				
+				//Days of the week.
+				if (y < 5) {
+					ctx.textAlign = "center";
+					ctx.fillText(daysOfWeek[y], x + 78 + p, p - 10);
+					ctx.textAlign = "left";
+				}
+			}
+			
+			//Draws one horizontal line
+			for (var x = 0, y = 0; x <= bh; x += 45, y++) {
+				ctx.moveTo(p, 0.5 + x + p);
+				ctx.lineTo(bw + p, 0.5 + x + p);
+				
+				//Hour markers.
+				ctx.textAlign = "right";
+				ctx.fillText(hoursOfDay[y], p-5, x + p + 5);
+				ctx.textAlign = "left";
+			}
+			
+			//Draw Normal Lines
+			ctx.strokeStyle = "black";
+			ctx.stroke();
+			
+			//Half Hour Lines
+			for (var x = 0, y = 0; y < 12; x += 45, y++) {
+				ctx.moveTo(p, x+22.5+p);
+				ctx.lineTo(bw+p, x+22.5+p);
+			}
+			
+			//Draw Half Hour 50% opacity lines
+			ctx.globalAlpha = 0.2;
+			ctx.stroke();
+			
+			drawClassMeetings(c, ctx);
+		}
+	</script>
+</head>
+<body onload="initializeCanvas()">
+
+<div class="container">
+	<!-- Header -->
+	<div class="header">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td valign="middle" align="left">
+					<a href="index.html"><img src="images/portal_logo.png" alt=""></a>
+				</td>
+				<td valign="middle" align="center">
+					<a href="index.html"><img src="images/SchoolName.gif" alt=""></a>
+				</td>
+				<td valign="middle" align="right">
+					<a href="index.html"><img src="images/flag.png" alt=""></a>
+				</td>
+			</tr>
+		</table>
+	<!-- End Header --></div>
+	
+	<!--Sidebar-->
+	<div class="sidebar">
+		<ul class="nav">
+			<li><a href="university-requirements.html">University Requirements</a></li>
+			<li><a href="franklin-college-requirements.html">Franklin College Requirements</a></li>
+			<li><a href="area-i-foundation-courses.html">AREA I: Foundation Courses</a></li>
+			<li><a href="area-ii-sciences.html">AREA II: Sciences</a></li>
+			<li><a href="area-iii-quantitative-reasoning.html">AREA III: Quantitative Reasoning</a></li>
+			<li><a href="area-iv-world-lang-culture-humanities-arts.html">AREA IV: World Lang & Culture, Humanities & Arts</a></li>
+			<li><a href="area-v-social-sciences.html">AREA V: Social Sciences</a></li>
+			<li><a href="area-f-vi-major-related-requirements.html">AREA F/VI: Major Related Requirements</a></li>
+			<li><a href="major-requirements.html">Major Requirements</a></li>
+		</ul>
+		
+		<p><a href="schedule.html">Current Schedule</a><br>
+		CSCI 4050<br>
+		CSCI 4560<br>
+		CSCI 4730
+		</p>
+	<!-- End Sidebar --></div>
+	
+	<div class="content">
+		<div class="maincontent">
+			<h1>Schedule</h1>
+			
+			<canvas id="myCanvas" width="880" height="640">
+				Your browser does not support the HTML5 canvas tag.
+			</canvas>
+			
+			
+			<br><br><br><br>
+			<table id="schedule" class="display" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>Call #</th>
+							<th>Subject</th>
+							<th>Course</th>
+							<th>Credit</th>
+							<th>Course Title</th>
+							<th>Days</th>
+							<th>Time</th>
+							<th>Building</th>
+							<th>Room</th>
+							<th>Instructor</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Call #</th>
+							<th>Subject</th>
+							<th>Course</th>
+							<th>Credit</th>
+							<th>Course Title</th>
+							<th>Days</th>
+							<th>Time</th>
+							<th>Building</th>
+							<th>Room</th>
+							<th>Instructor</th>
+						</tr>
+					</tfoot>
+				</table>
+				<br><br>
+		<!-- End Maincontent --></div>
+	<!-- End Ccontent --></div>
+	
+	<div class="footer">
+		<p>Team 7 | Meghan Redwine | Alex Tozzi | Johnathan Meggs | Vincent Lee</p>
+	<!-- End Footer --></div>
+<!-- End Container --></div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="UGA's experimental course picking website, presented by Dan Everett.">
+	<meta name="keywords" content="dan, dran, everett, uga, coursepicker, course, picker, oasis, elc">
+	<title>AREA F/VI: Major Related Requirements | UGA Course Picker</title>
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/jquery.dataTables.css">
+	<!--[if lte IE 7]>
+	<style> .content { margin-right: -1px; }
+	ul.nav a { zoom: 1; } </style>
+	<![endif]-->
+	<style type="text/css" class="init"></style>
+	<script src="assets/jquery.js"></script>
+	<script src="assets/jquery.dataTables.js"></script>
+	<script class="init">
+	$(document).ready(function() {
+		$('#core-curriculum-vi-major-related-courses').dataTable({
+			"pageLength": 5,
+			"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+			"ajax": {
+				"url": "data/core-curriculum-vi-major-related-courses.json",
+				"dataSrc": ""
+			},
+			"columns": [
+				{ "data": "Select" },
+				{ "data": "Call #" },
+				{ "data": "Subject" },
+				{ "data": "Course" },
+				{ "data": "Credit" },
+				{ "data": "Course Title" },
+				{ "data": "Days" },
+				{ "data": "Time" },
+				{ "data": "Building" },
+				{ "data": "Room" },
+				{ "data": "Instructor" },
+				{ "data": "Status" }
+			]
+		});
+	});
+	</script>
+</head>
+<body>
+
+
+<div class="container">
+	<!-- Header -->
+	<div class="header">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td valign="middle" align="left">
+					<a href="index.html"><img src="images/portal_logo.png" alt=""></a>
+				</td>
+				<td valign="middle" align="center">
+					<a href="index.html"><img src="images/SchoolName.gif" alt=""></a>
+				</td>
+				<td valign="middle" align="right">
+					<a href="index.html"><img src="images/flag.png" alt=""></a>
+				</td>
+			</tr>
+		</table>
+	<!-- End Header --></div>
+	
+	<!--Sidebar-->
+	<div class="sidebar">
+		<ul class="nav">
+			<li><a href="university-requirements.html">University Requirements</a></li>
+			<li><a href="franklin-college-requirements.html">Franklin College Requirements</a></li>
+			<li><a href="area-i-foundation-courses.html">AREA I: Foundation Courses</a></li>
+			<li><a href="area-ii-sciences.html">AREA II: Sciences</a></li>
+			<li><a href="area-iii-quantitative-reasoning.html">AREA III: Quantitative Reasoning</a></li>
+			<li><a href="area-iv-world-lang-culture-humanities-arts.html">AREA IV: World Lang & Culture, Humanities & Arts</a></li>
+			<li><a href="area-v-social-sciences.html">AREA V: Social Sciences</a></li>
+			<li><a href="area-f-vi-major-related-requirements.html">AREA F/VI: Major Related Requirements</a></li>
+			<li><a href="major-requirements.html">Major Requirements</a></li>
+		</ul>
+		
+		<p><a href="schedule.html">Current Schedule</a><br>
+		CSCI 4050<br>
+		CSCI 4560<br>
+		CSCI 4730
+		</p>
+	<!-- End Sidebar --></div>
+	
+	<div class="content">
+		<div class="maincontent">
+			<h1>AREA F/VI: Major Related Requirements</h1>
+			
+			<form name="courses" action="">
+				<h3>Core Curriculum VI: Major related courses</h3>
+				<table id="core-curriculum-vi-major-related-courses" class="display" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>Select</th>
+							<th>Call #</th>
+							<th>Subject</th>
+							<th>Course</th>
+							<th>Credit</th>
+							<th>Course Title</th>
+							<th>Days</th>
+							<th>Time</th>
+							<th>Building</th>
+							<th>Room</th>
+							<th>Instructor</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Select</th>
+							<th>Call #</th>
+							<th>Subject</th>
+							<th>Course</th>
+							<th>Credit</th>
+							<th>Course Title</th>
+							<th>Days</th>
+							<th>Time</th>
+							<th>Building</th>
+							<th>Room</th>
+							<th>Instructor</th>
+							<th>Status</th>
+						</tr>
+					</tfoot>
+				</table>
+				<br>
+				<input type="submit" value="Add Course">
+			</form>
+			<br>
+		<!-- End Maincontent --></div>
+	<!-- End Content --></div>
+	
+	<div class="footer">
+		<p>Team 7 | Meghan Redwine | Alex Tozzi | Johnathan Meggs | Vincent Lee</p>
+	<!-- End Footer --></div>
+	
+<!-- End Container --></div>
+</body>
+</html>
