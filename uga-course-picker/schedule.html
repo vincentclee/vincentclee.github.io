@@ -53,6 +53,7 @@
 		var hoursOfDay = new Array("8 AM", "9 AM", "10 AM", "11 AM", "Noon", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM");
 		var prefix = new Array("CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI", "CSCI");
 		var number = new Array("4050", "4050", "4050", "4730", "4730", "4730", "4560", "4560", "4560");
+		var courseId = new Array("0", "0", "0", "1", "1", "1", "2", "2", "2");
 		var title = new Array("SOFT ENGINEERING", "SOFT ENGINEERING", "SOFT ENGINEERING", "OPERATING SYSTEMS", "OPERATING SYSTEMS", "OPERATING SYSTEMS", "EVOLUTIONARY COMPUT", "EVOLUTIONARY COMPUT", "EVOLUTIONARY COMPUT");
 		var instructor = new Array("KOCHUT", "KOCHUT", "KOCHUT", "RAMASWAMY", "RAMASWAMY", "RAMASWAMY", "RASHEED", "RASHEED", "RASHEED");
 		var day = new Array("W", "T", "R", "W", "T", "R", "W", "T", "R");
@@ -63,6 +64,7 @@
 		var posX = new Array("362", "206", "518", "362", "206", "518", "362", "206", "518");
 		var posY = new Array("141", "118", "118", "343", "321", "321", "388", "388", "388");
 		var height = new Array("49", "60", "60", "38", "60", "60", "38", "60", "60");
+		var color = new Array("orange", "green", "violet", "red", "blue", "yellow", "purple", "pink");
 		
 		/**
 	     * @author Meghan Redwine
@@ -77,11 +79,11 @@
 			// Draws one class meeting
 			for (var i=0; i<posX.length; i++) {
 				//Draw box
-				ctx.fillStyle = "orange";
+				ctx.fillStyle = color[courseId[i]];
 				ctx.globalAlpha = 1;
 				//0.5 + x + p, 60+45, w-static, h) //(x,y of top left corner, width, height) //(60.5, 206, 156, 56.1)
 				//ctx.fillRect(parseInt(posX[i]), parseInt(posY[i]), 155, parseInt(height[i]));
-				ctx.strokeStyle = "orange";
+				ctx.strokeStyle = color[courseId[i]];
 				
 				var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 				
