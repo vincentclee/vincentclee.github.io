@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Sign Up</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="a/images/favicon.ico">
+<link rel="fluid-icon" href="a/images/fluid512.png" title="Koding">
+<link rel="stylesheet" href="a/css/kd.css">
+<link rel="stylesheet" href="a/css/koding.css">
+<link href="a/css/teamwork.css" rel="stylesheet" id="internal-style-app-teamworkbundle">
+<link href="a/css/social.css" rel="stylesheet" id="internal-style-app-social">
+
+<!-- Vincent -->
+<link rel="stylesheet" href="a/css/vincent.css">
+<script src="a/js/jquery.js"></script>
+<script src="a/js/global.js"></script>
+<script src="a/js/signup.js"></script>
+
+</head>
+<body class="logged-in teamwork">
+<!--[if IE]><script>(function(){window.location.href='/unsupported.html'})();</script><![endif]-->
+
+
+
+<div class="kdview" id="kdmaincontainer">
+	<header class="kdview" id="main-header">
+		<div class="inner-container">
+			<a class="production" href="#" id="koding-logo"><cite></cite></a>
+			
+			<div id="dock">
+				<div class="kdcustomscrollview">
+					<main class="kdview kdscrollview">
+						<div style="width: 330px;" class="kdview kdlistview kdlistview-navigation" id="main-nav">
+							<!-- NAV AREA === NAV AREA === NAV AREA === NAV AREA === NAV AREA === NAV AREA === NAV AREA -->
+						</div>
+					</main>
+					
+					<div style="" class="kdview kdscrolltrack vertical invisible">
+						<div style="height: 55px;" class="kdview kdscrollthumb kddraggable"></div>
+					</div>
+					
+					<div style="" class="kdview kdscrolltrack horizontal invisible">
+						<div style="width: 837px;" class="kdview kdscrollthumb kddraggable"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="account-area">
+			<!-- ACCOUNT AREA === ACCOUNT AREA === ACCOUNT AREA === ACCOUNT AREA === ACCOUNT AREA === ACCOUNT AREA === ACCOUNT AREA -->
+			</div>
+		</div>
+	</header>
+	
+	<section class="kdview" id="main-panel-wrapper">
+		<div class="kdview kdscrollview kdtabview" id="main-tab-view">
+			<div class="kdview kdtabpaneview teamwork clearfix content-area-pane active">
+				<div class="kdview application-page">
+					<div class="ws-header inner-header">
+						<h4>
+							<div class="header-title">
+								<span class="icon"></span>
+								<div id="page-title"></div>
+							</div>
+						</h4>
+					</div>
+					<div class="kdview workspace">
+					<!-- MAIN CONTENT === MAIN CONTENT === MAIN CONTENT === MAIN CONTENT === MAIN CONTENT === MAIN CONTENT === MAIN CONTENT -->
+						<div id="registration">
+							<div class="kdview kdscrollview kdtabview">
+								<div class="kdview kdtabpaneview clearfix active">
+									<div class="kdview settings-list-wrapper user-profile">
+										<div class="kdview username">
+											<section>
+												<form class="kdformview with-fields" id="signup">
+													<div class="kdview formline firstname medium half">
+														<div class="input-wrapper">
+															<input type="text" class="kdinput text medium half"
+																name="name" placeholder="name">
+														</div>
+													</div>
+													<div class="kdview formline email medium">
+														<div class="input-wrapper">
+															<input type="text" class="kdinput text medium"
+																name="email" placeholder="you@yourdomain.com">
+														</div>
+													</div>
+													<div class="kdview formline username medium">
+														<div class="input-wrapper">
+															<input type="text" class="kdinput text medium"
+																name="username" placeholder="username">
+														</div>
+													</div>
+													<div class="kdview formline password medium medium">
+														<div class="input-wrapper">
+															<input type="password" class="kdinput text medium half"
+																name="password" placeholder="password">
+															<input type="password" class="kdinput text medium half"
+																name="confirmPassword" placeholder="confirm password">
+														</div>
+													</div>
+													<div class="kdview formline avatar medium">
+														<div class="input-wrapper">
+															<input type="text" class="kdinput text medium"
+																name="avatar" placeholder="avatar url">
+														</div>
+													</div>
+													<div class="kdview formline button-field clearfix">
+														<button id="kd-2419"
+															class="kdbutton profile-save-changes solid green w-loader"
+															type="submit" style="width: 100%">
+															<span class="button-title">REGISTER</span>
+														</button>
+													</div>
+												</form>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="kdbutton app-settings-menu icon-only hidden" id="kd-57"><span class="icon"></span></button>
+	</section>
+	<div class="kdview notifications avatararea-popup">
+		<div class="kdview tab">
+			<span class="avatararea-popup-close"></span>
+		</div>
+		<div class="kdview content">
+			<div class="kdview sublink top">You have no new notifications.</div>
+			<div class="kdview listview-wrapper">
+				<div style="max-height: 680px;" class="kdview kdscrollview">
+					<ul class="kdview kdlistview kdlistview-default avatararea-popup-list"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="kdview content sublink hidden">Login required to see notifications</div>
+	</div>
+	<div class="kdview group-switcher avatararea-popup">
+		<div class="kdview tab">
+			<span class="avatararea-popup-close"></span>
+		</div>
+		<div class="kdview content">
+			<div class="kdview sublink top hidden">You have pending group invitations:</div>
+			<span class="icon help"></span>
+			<a href="#" class="bottom">Your groups</a>
+			<a href="https://koding.com/Account" class="bottom separator">Account settings</a>
+			<a href="https://koding.com/Environments" class="bottom">Environments</a>
+			<a href="#" class="bottom">System health check</a>
+			<a href="#" class="bottom hidden">Group dashboard</a>
+			<a href="https://koding.com/Logout" class="bottom">Logout</a>
+		</div>
+		<div class="kdview content sublink hidden">Login required to switch groups</div>
+		<div style="right: 293px;" class="avatararea-popup notifications group-switcher submenu">
+			<div class="kdview content">
+				<a href="https://koding.com/Pricing/Team" class="bottom bb">Create a group</a>
+				<div class="kdview listview-wrapper">
+					<div class="kdview kdscrollview">
+						<ul class="kdview kdlistview kdlistview-default avatararea-popup-list"></ul>
+					</div>
+				</div>
+				<div class="kdview listview-wrapper">
+					<div style="max-height: 680px;" class="kdview kdscrollview">
+						<ul class="kdview kdlistview kdlistview-default avatararea-popup-list"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Notifications -->
+<div class="kdnotification main popup">
+	<div class="kdnotification-title"></div>
+</div>
+
+</body>
+</html>

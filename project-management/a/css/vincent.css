@@ -1,0 +1,106 @@
+table#kanban-board {
+	height: 100%;
+}
+
+table#kanban-board th {
+	color: #1AAF5D;
+	font-size: 28px;
+	padding: 0 0 5px 0;
+	border-left: 2px solid #252E30;
+}
+/* .table-column {
+	max-height:100%;
+	height:auto !important;
+	overflow:auto;
+	overflow-x:hidden;
+} */
+
+table#kanban-board h1 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table#kanban-board td {
+	min-width: 250px;
+	height: 100%;
+	border-left: 2px solid #252E30;
+}
+table#kanban-board td:first-child {
+	border-left: none;
+}
+
+#login {
+	width: 30%;
+	margin: 60px auto;
+}
+#registration {
+	width: 30%;
+	margin: 40px auto;
+}
+* {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove dotted line around boxes */
+a:focus, a:active, 
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: 0;
+    outline : 0;
+}
+/* End remove dotted line */
+
+.kdview .workspace {
+	height: 500px;
+	overflow-x: auto;
+}
+.tos, .privacy {
+	color: #828B8B;
+	padding: 10px;
+	max-height:100%;
+	height:auto !important;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.popup {
+	position:fixed; top:50%; left:50%;-webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); display:none;
+}
+
+.description-notes {
+    color: #7A8285;
+    font-size: 15px;
+    margin: 0 30px;
+    text-align: left;
+}
+.description-notes ol {
+	list-style: decimal outside;
+}
+.description-notes ul {
+	list-style: disc outside;
+}
+
+#separator {
+	background-color: #CECECE;
+	height: 1px;
+	margin: 42px auto;
+	opacity: 0.2;
+	width: auto;
+}
+
+.avatarviewimg {
+	opacity: 1;
+}
+
+/* Clickable */
+#koding-logo, #logout, #account-settings, .terminal-bottom-message, #tos, #privacy, #main-nav a {
+	cursor: pointer;
+}

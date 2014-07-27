@@ -174,27 +174,27 @@ span.more,
 
 /* gradient backgrounds */
 .white-texture, .white-texture-reverse { background:#e5e5e5; }
-.gold-texture, .gold-texture-reverse { background:url(/project-management/a/home/img/texture_gold.png); }
-.silver-texture, .silver-texture-reverse { background:url(/project-management/a/home/img/texture_silver.png); }
-.gray-texture, .gray-texture-reverse { color:#ddd; background:url(/project-management/a/home/img/texture_gray.png); }
+.gold-texture, .gold-texture-reverse { background:url(/db-term-project/a/home/img/texture_gold.png); }
+.silver-texture, .silver-texture-reverse { background:url(/db-term-project/a/home/img/texture_silver.png); }
+.gray-texture, .gray-texture-reverse { color:#ddd; background:url(/db-term-project/a/home/img/texture_gray.png); }
 
-.white-texture { background:url(/project-management/a/home/img/gradient_white.png); background-size:20px 100%; }
-.white-texture-reverse { background:url(/project-management/a/home/img/gradient_white_reverse.png); background-size:20px 100%; }
-.gold-texture { background:url(/project-management/a/home/img/texture_50.png), url(/project-management/a/home/img/gradient_gold.png); background-size:160px,20px 100%; }
-.gold-texture-reverse { background:url(/project-management/a/home/img/texture_50.png), url(/project-management/a/home/img/gradient_gold_reverse.png); background-size:160px,20px 100%; }
-.silver-texture { background:url(/project-management/a/home/img/texture_50.png), url(/project-management/a/home/img/gradient_silver.png); background-size:160px,20px 100%; }
-.silver-texture-reverse { background:url(/project-management/a/home/img/texture_50.png), url(/project-management/a/home/img/gradient_silver_reverse.png); background-size:160px,20px 100%; }
-.gray-texture { background:url(/project-management/a/home/img/texture_20.png), url(/project-management/a/home/img/gradient_black.png); background-size:160px,20px 100%; }
-.gray-texture-reverse { background:url(/project-management/a/home/img/texture_20.png), url(/project-management/a/home/img/gradient_black_reverse.png); background-size:160px,20px 100%; }
+.white-texture { background:url(/db-term-project/a/home/img/gradient_white.png); background-size:20px 100%; }
+.white-texture-reverse { background:url(/db-term-project/a/home/img/gradient_white_reverse.png); background-size:20px 100%; }
+.gold-texture { background:url(/db-term-project/a/home/img/texture_50.png), url(/db-term-project/a/home/img/gradient_gold.png); background-size:160px,20px 100%; }
+.gold-texture-reverse { background:url(/db-term-project/a/home/img/texture_50.png), url(/db-term-project/a/home/img/gradient_gold_reverse.png); background-size:160px,20px 100%; }
+.silver-texture { background:url(/db-term-project/a/home/img/texture_50.png), url(/db-term-project/a/home/img/gradient_silver.png); background-size:160px,20px 100%; }
+.silver-texture-reverse { background:url(/db-term-project/a/home/img/texture_50.png), url(/db-term-project/a/home/img/gradient_silver_reverse.png); background-size:160px,20px 100%; }
+.gray-texture { background:url(/db-term-project/a/home/img/texture_20.png), url(/db-term-project/a/home/img/gradient_black.png); background-size:160px,20px 100%; }
+.gray-texture-reverse { background:url(/db-term-project/a/home/img/texture_20.png), url(/db-term-project/a/home/img/gradient_black_reverse.png); background-size:160px,20px 100%; }
 
 @media only screen and (-webkit-min-device-pixel-ratio:1.5) and (min-device-width:321px),
        only screen and (min-device-pixel-ratio:1.5) and (min-device-width:321px) {
-	.gold-texture { background:url(/project-management/a/home/img/texture_50_2x.png), url(/project-management/a/home/img/gradient_gold.png); background-size:80px,20px 100%; }
-	.gold-texture-reverse { background:url(/project-management/a/home/img/texture_50_2x.png), url(/project-management/a/home/img/gradient_gold_reverse.png); background-size:80px,20px 100%; }
-	.silver-texture { background:url(/project-management/a/home/img/texture_50_2x.png), url(/project-management/a/home/img/gradient_silver.png); background-size:80px,20px 100%; }
-	.silver-texture-reverse { background:url(/project-management/a/home/img/texture_50_2x.png), url(/project-management/a/home/img/gradient_silver_reverse.png); background-size:80px,20px 100%; }
-	.gray-texture { background:url(/project-management/a/home/img/texture_20_2x.png), url(/project-management/a/home/img/gradient_black.png); background-size:80px,20px 100%; }
-	.gray-texture-reverse { background:url(/project-management/a/home/img/texture_20_2x.png), url(/project-management/a/home/img/gradient_black_reverse.png); background-size:80px,20px 100%; }
+	.gold-texture { background:url(/db-term-project/a/home/img/texture_50_2x.png), url(/db-term-project/a/home/img/gradient_gold.png); background-size:80px,20px 100%; }
+	.gold-texture-reverse { background:url(/db-term-project/a/home/img/texture_50_2x.png), url(/db-term-project/a/home/img/gradient_gold_reverse.png); background-size:80px,20px 100%; }
+	.silver-texture { background:url(/db-term-project/a/home/img/texture_50_2x.png), url(/db-term-project/a/home/img/gradient_silver.png); background-size:80px,20px 100%; }
+	.silver-texture-reverse { background:url(/db-term-project/a/home/img/texture_50_2x.png), url(/db-term-project/a/home/img/gradient_silver_reverse.png); background-size:80px,20px 100%; }
+	.gray-texture { background:url(/db-term-project/a/home/img/texture_20_2x.png), url(/db-term-project/a/home/img/gradient_black.png); background-size:80px,20px 100%; }
+	.gray-texture-reverse { background:url(/db-term-project/a/home/img/texture_20_2x.png), url(/db-term-project/a/home/img/gradient_black_reverse.png); background-size:80px,20px 100%; }
 }
 
 
