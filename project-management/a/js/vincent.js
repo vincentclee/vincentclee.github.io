@@ -29,23 +29,18 @@ $(document).ready(function() {
 	});
 	
 	//Initialize
-	__login();
+	init();
 });
 
 //Initialize
 function init() {
-	//Send Cookie
-	$.post(HOSTNAME + "login", function(data) {
-		USER = jQuery.parseJSON(data);
-		
-		//Change Canvas
-		if (USER.userID == -1) {
-			__login();
-		} else if (USER.userID == 0) {
-			__accountarea();
-			__projects();
-		}
-	});
+	//Change Canvas
+	if (USER.userID == 0) {
+		__accountarea();
+		__projects();
+	} else {
+		__login();
+	}
 }
 
 //Wipe main canvas, page title, document title
