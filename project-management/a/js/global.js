@@ -1,4 +1,4 @@
-var HOSTNAME = "http://172.17.149.126:8080/db-term-project/";
+var HOSTNAME = "json/";
 var SITE_NAME = "Project Pusheen";
 var POPUP_DURATION = 2000; //in ms
 

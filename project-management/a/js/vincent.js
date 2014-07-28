@@ -31,7 +31,7 @@ $(document).ready(function() {
 	});
 	
 	//Initialize
-	init();
+	login();
 });
 
 //Initialize
@@ -116,8 +116,8 @@ function __login() {
 			event.preventDefault();
 			
 			//Send Login request + Serialize the form
-			$.post(HOSTNAME + "login", $(this).serialize(), function(data) {
-				USER = jQuery.parseJSON(data);
+			$.getJSON(HOSTNAME + "user.json", $(this).serialize(), function(data) {
+				USER = data;
 				
 				if (USER.userID == -1) {
 					popup("Access Denied!");
@@ -169,7 +169,7 @@ function __projects() {
 	$("<div>", {class: "tw-playgrounds"}).appendTo(".kdview .workspace");
 	
 	//Create Objects
-	$.getJSON(HOSTNAME + "project", function(projects) {
+	$.getJSON(HOSTNAME + "project.json", function(projects) {
 		$.each(projects, function(index, project) {
 			//Create Div Block
 			var div = $("<div>", {id:"p" + project.projectID, class:"tw-playground-item"});
@@ -202,7 +202,7 @@ function __board(project_id) {
 	//Load Table
 	$(".kdview .workspace").load("board-p.html", function () {
 		//Populate the Table
-		$.getJSON(HOSTNAME + "board", "pId=" + project_id, function(data) {
+		$.getJSON(HOSTNAME + "pId/" + project_id, function(data) {
 			$.each(data, function(key, value) {
 				$.each(value, function(index, element) {
 					//Create Div Block
@@ -238,7 +238,7 @@ function __task(task_id) {
 	//Load Task Page
 	$(".kdview .workspace").load("task-p.html", function () {
 		//Populate
-		$.getJSON(HOSTNAME + "task", "tId=" + task_id, function(task) {
+		$.getJSON(HOSTNAME + "tId/" + task_id, function(task) {
 			//Title
 			$("#tTitle").text(task.title);
 			
