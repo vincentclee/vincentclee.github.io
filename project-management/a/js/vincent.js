@@ -1,3 +1,5 @@
+var USER;
+
 $(document).ready(function() {
 	//Top left green box
 	$("#koding-logo").click(function() {
@@ -27,7 +29,7 @@ $(document).ready(function() {
 	});
 	
 	//Initialize
-	init();
+	__login();
 });
 
 //Initialize
