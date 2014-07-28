@@ -13,6 +13,9 @@ $(document).ready(function() {
 	
 	//Table Columns Overflow
 	$("div.table-column").css("max-height", $(window).height() - 156);
+	
+	//Plugin
+	$("html").fn.serializeObject;
 });
 
 //dynamically resize height
