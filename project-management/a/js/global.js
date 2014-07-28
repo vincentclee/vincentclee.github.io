@@ -1,6 +1,7 @@
 var HOSTNAME = "json/";
 var SITE_NAME = "Project Pusheen";
 var POPUP_DURATION = 2000; //in ms
+var USER;
 
 $(document).ready(function() {
 	//Popup Close

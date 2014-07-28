@@ -1,5 +1,3 @@
-var USER;
-
 $(document).ready(function() {
 	//Top left green box
 	$("#koding-logo").click(function() {
