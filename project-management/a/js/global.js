@@ -31,7 +31,7 @@ function popup(message) {
 }
 
 /*!
- * jQuery viewportOffset - v0.3 - 2/3/2010
+ * jQuery serializeObject - v0.2 - 1/20/2010
  * http://benalman.com/projects/jquery-misc-plugins/
  * 
  * Copyright (c) 2010 "Cowboy" Ben Alman
@@ -39,21 +39,26 @@ function popup(message) {
  * http://benalman.com/about/license/
  */
 
-// Like the built-in jQuery .offset() method, but calculates left and top from
-// the element's position relative to the viewport, not the document.
+// Whereas .serializeArray() serializes a form into an array, .serializeObject()
+// serializes a form into an (arguably more useful) object.
 
-(function($){
+(function($,undefined){
   '$:nomunge'; // Used by YUI compressor.
   
-  var win = $(window);
-  
-  $.fn.viewportOffset = function() {
-    var offset = $(this).offset();
+  $.fn.serializeObject = function(){
+    var obj = {};
     
-    return {
-      left: offset.left - win.scrollLeft(),
-      top: offset.top - win.scrollTop()
-    };
+    $.each( this.serializeArray(), function(i,o){
+      var n = o.name,
+        v = o.value;
+        
+        obj[n] = obj[n] === undefined ? v
+          : $.isArray( obj[n] ) ? obj[n].concat( v )
+          : [ obj[n], v ];
+    });
+    
+    return obj;
   };
   
 })(jQuery);
+
