@@ -200,7 +200,7 @@ function __board(project_id) {
 	//Load Table
 	$(".kdview .workspace").load("board-p.html", function () {
 		//Populate the Table
-		$.getJSON(HOSTNAME + "pId/" + project_id, function(data) {
+		$.getJSON(HOSTNAME + "pId/" + project_id + ".json", function(data) {
 			$.each(data, function(key, value) {
 				$.each(value, function(index, element) {
 					//Create Div Block
@@ -236,7 +236,7 @@ function __task(task_id) {
 	//Load Task Page
 	$(".kdview .workspace").load("task-p.html", function () {
 		//Populate
-		$.getJSON(HOSTNAME + "tId/" + task_id, function(task) {
+		$.getJSON(HOSTNAME + "tId/" + task_id + ".json", function(task) {
 			//Title
 			$("#tTitle").text(task.title);
 			
@@ -251,7 +251,7 @@ function __task(task_id) {
 
 			
 			//Project Members
-			$.getJSON(HOSTNAME + "task_users", "tId=" + task_id, function(users) {
+			$.getJSON(HOSTNAME + "tuId/" + task_id + ".json", function(users) {
 				$.each(users, function(index, user) {
 					//Create span block
 					var span = $("<span>", {class:"avatarview"});
@@ -321,29 +321,27 @@ function __account_settings() {
 			event.preventDefault();
 			
 			//Submit the form
-			$.post(HOSTNAME + "user", $(this).serialize(), function(data) {
-				var tempUser = jQuery.parseJSON(data);
+			var tempUser = JSON.stringify($(this).serialize());
+			
+			if (tempUser.userID == 0) {
+				USER = tempUser;
 				
-				if (tempUser.userID == 0) {
-					USER = tempUser;
-					
-					popup(USER.message);
-					
-					//Display Name
-					$("#el-15").text(USER.displayName);
-					
-					//Username
-					$("#el-12").text(USER.username);
-					
-					//Avatar
-					$("#my-avatar").attr("src", USER.avatar);
-					
-					//Re-Populate with User info
-					$("input[name='actualName']").val(USER.displayName);
-					$("input[name='email']").val(USER.email);
-					$("input[name='avatar']").val(USER.avatar);
-				}
-			});
+				popup(USER.message);
+				
+				//Display Name
+				$("#el-15").text(USER.displayName);
+				
+				//Username
+				$("#el-12").text(USER.username);
+				
+				//Avatar
+				$("#my-avatar").attr("src", USER.avatar);
+				
+				//Re-Populate with User info
+				$("input[name='actualName']").val(USER.displayName);
+				$("input[name='email']").val(USER.email);
+				$("input[name='avatar']").val(USER.avatar);
+			}
 		});
 	});
 }
