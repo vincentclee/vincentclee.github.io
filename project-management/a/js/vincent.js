@@ -110,7 +110,7 @@ function __login() {
 	$(".account-area").empty();
 	
 	//Load Login Screen
-	$(".kdview .workspace").load("login-p.html",
+	$(".kdview .workspace").load("login-p.html", function() {
 		//Bind Form Button
 		$(document).on("submit", "#login-form", function(event) {
 			event.preventDefault();
@@ -126,8 +126,8 @@ function __login() {
 					__projects();
 				}
 			});
-		})
-	);
+		});
+	});
 }
 
 //Account Area
