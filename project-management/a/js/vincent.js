@@ -323,25 +323,25 @@ function __account_settings() {
 			//Submit the form
 			var tempUser = $(this).serializeObject();
 			
-			if (tempUser.userID == 0) {
-				USER = tempUser;
-				
-				popup(USER.message);
-				
-				//Display Name
-				$("#el-15").text(USER.displayName);
-				
-				//Username
-				$("#el-12").text(USER.username);
-				
-				//Avatar
-				$("#my-avatar").attr("src", USER.avatar);
-				
-				//Re-Populate with User info
-				$("input[name='actualName']").val(USER.displayName);
-				$("input[name='email']").val(USER.email);
-				$("input[name='avatar']").val(USER.avatar);
-			}
+			USER.displayName = tempUser.actualName;
+			USER.email = tempUser.email;
+			USER.avatar = tempUser.avatar;
+			
+			popup(USER.message);
+			
+			//Display Name
+			$("#el-15").text(USER.displayName);
+			
+			//Username
+			$("#el-12").text(USER.username);
+			
+			//Avatar
+			$("#my-avatar").attr("src", USER.avatar);
+			
+			//Re-Populate with User info
+			$("input[name='actualName']").val(USER.displayName);
+			$("input[name='email']").val(USER.email);
+			$("input[name='avatar']").val(USER.avatar);
 		});
 	});
 }
