@@ -24,14 +24,12 @@ $(document).ready(function() {
 	
 	//Logout
 	$("#logout").click(function() {
-		$.post(HOSTNAME + "logout", $(this).serialize(), function(data) {
-			USER = null;
-			window.location = "index.html"; //Go to homepage
-		});
+		USER = null;
+		window.location = "index.html"; //Go to homepage
 	});
 	
 	//Initialize
-	login();
+	__login();
 });
 
 //Initialize
