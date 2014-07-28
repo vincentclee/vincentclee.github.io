@@ -327,7 +327,7 @@ function __account_settings() {
 			USER.email = tempUser.email;
 			USER.avatar = tempUser.avatar;
 			
-			popup(USER.message);
+			popup("Your account information is updated.");
 			
 			//Display Name
 			$("#el-15").text(USER.displayName);

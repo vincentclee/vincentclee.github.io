@@ -12,17 +12,17 @@ $(document).ready(function() {
 		event.preventDefault();
 		
 		//Submit the form
-		$.post(HOSTNAME + "signup", $(this).serialize(), function(data) {
-			var tempUser = jQuery.parseJSON(data);
-			
-			if (tempUser.userID == 0) {
-				window.location = "home.html";
-			} else if (tempUser.userID == -1) {
-				popup(tempUser.message);
-			} else {
-				window.location = "index.html";
-			}
-		});
+		var tempUser = $(this).serializeObject();
+		
+		USER = "{'userID':0,'username':'','email':'','displayName':'','avatar':''}";
+		
+		USER.displayName = tempUser.name;
+		USER.email = tempUser.email;
+		USER.username = tempUser.username;
+		USER.avatar = tempUser.avatar;
+		
+		//Go to Home Screen
+		window.location = "home.html";
 	});
 });
 
