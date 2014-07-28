@@ -167,7 +167,7 @@ function __projects() {
 	$("<div>", {class: "tw-playgrounds"}).appendTo(".kdview .workspace");
 	
 	//Create Objects
-	$.getJSON(HOSTNAME + "project.json", function(projects) {
+	$.getJSON(HOSTNAME + "projects.json", function(projects) {
 		$.each(projects, function(index, project) {
 			//Create Div Block
 			var div = $("<div>", {id:"p" + project.projectID, class:"tw-playground-item"});
