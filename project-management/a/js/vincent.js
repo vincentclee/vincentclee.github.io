@@ -321,7 +321,7 @@ function __account_settings() {
 			event.preventDefault();
 			
 			//Submit the form
-			var tempUser = $(this).serializeArray();
+			var tempUser = $(this).serializeObject();
 			
 			if (tempUser.userID == 0) {
 				USER = tempUser;
