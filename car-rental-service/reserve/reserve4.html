@@ -36,7 +36,18 @@
 		Lamborghini Aventador Coupe
 		<br><br>
 		<h2>Date</h2>
-		July 1, 2014 - July 2, 2014
+		<script>
+			var months = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+			
+			var date = new Date();
+			date.setTime(date.getTime() + 432000000); // add 5 days
+			
+			document.write(months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear() + " - ");
+			
+			date.setTime(date.getTime() + 86400000); // add 1 day
+			
+			document.write(months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear());
+		</script>
 		<br><br>
 		<h2>Price</h2>
 		$450
